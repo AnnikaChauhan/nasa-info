@@ -1,19 +1,16 @@
 // GET https://api.nasa.gov/planetary/apod
 
-import key from "./variables.js";
+import APIkey from "./variables.js";
+const key = "lOlH3lnFB8w96r2UdDzVubhemZJxFjDjFQlrr1Ou";
 
 async function getNasaImage() {
     const params = {
         api_key: key
     }
     const response = await axios.get("https://api.nasa.gov/planetary/apod", { params });
-        //entire response
-    //console.log(response);
-        //just data
-    //console.log(response.data);
-        //put image onto the page
     const img = document.createElement('img')
-    img.src = response.data.url
+    img.src = response.data.hdurl
+    img.alt = 'I wanted to get the best quality image for you so sometimes it takes some time, sorry!'
     document.getElementById('nasapic').appendChild(img); 
 }
 
@@ -29,8 +26,11 @@ const farenheitToCelsius = (farenheight) => {
 }
 
 const getTheDate = (date) => {
-    const dateAsDate = Date(date);
-    return dateAsDate;
+    const monthsArray = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const month = Number(date.substr(5,2));
+    const monthAsNamed = monthsArray[month - 1];
+    const day = Number(date.substr(8, 2));
+    return `${day} ${monthAsNamed}`;
 }
 
 async function getWeatherOnMars(){
@@ -45,8 +45,10 @@ async function getWeatherOnMars(){
     todaysWeatherSection.innerHTML = `<div class="todayOnMars">
                                             <h3>Today on Mars</h3>
                                             <h4>It is Sol ${Object.keys(weatherObject)[6]}</h4>
-                                            <p>Highs: ${roundToTwoDecimalPlaces(farenheitToCelsius(weatherObject[Object.keys(weatherObject)[6]].AT.mx))}°C</p>
-                                            <p>Lows: ${roundToTwoDecimalPlaces(farenheitToCelsius(weatherObject[Object.keys(weatherObject)[6]].AT.mn))}°C</p>
+                                            <div class="highsAndLows">
+                                                <p>Highs: ${roundToTwoDecimalPlaces(farenheitToCelsius(weatherObject[Object.keys(weatherObject)[6]].AT.mx))}°C</p>
+                                                <p>Lows: ${roundToTwoDecimalPlaces(farenheitToCelsius(weatherObject[Object.keys(weatherObject)[6]].AT.mn))}°C</p>
+                                                </div>
 
                                         </div>`
     const dailyWeatherSection = document.createElement('section');
@@ -55,7 +57,7 @@ async function getWeatherOnMars(){
         const weatherPerDay = weatherObject[Object.keys(weatherObject)[i]];
         dailyWeatherSection.innerHTML +=    `<article class="dailyWeather">
                                     <h3>Sol ${keyNames}</h3>
-                                    <h4>${getTheDate(weatherPerDay.First_UTC)}</h4>
+                                    <p>${getTheDate(weatherPerDay.First_UTC)}</p>
                                     <div class="highsAndLows">
                                         <p>High: ${roundToTwoDecimalPlaces(farenheitToCelsius(weatherPerDay.AT.mx))}°C</p>
                                         <p>Low: ${roundToTwoDecimalPlaces(farenheitToCelsius(weatherPerDay.AT.mn))}°C</p>

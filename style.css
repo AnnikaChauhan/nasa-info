@@ -4,8 +4,28 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #15418c;
+    color: lightgray;
+    text-align: center;
+}
+
+#logo {
+    width: 200px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    text-align: left;
+    padding: 10px;
+    font-size: 45px;
+}
+
 img {
-    height: 200px;
+    width: 100vw;
 }
 
 section {
@@ -15,9 +35,14 @@ section {
 }
 
 .todayOnMars {
-    width: 100vw;
+    width: 75vw;
+    border: 2px solid grey;
+    border-radius: 5px;
     text-align: center;
     padding: 10px 0;
+    background-color: lightgray;
+    color: grey;
+    margin-bottom: 10px;
 }
 
 .todayOnMars h3 {
@@ -32,15 +57,29 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: lightgray;
+    background-color: grey;
+    border: 2px solid lightgray;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px;
+    margin: 5px 2px 10px 2px;
     width: 160px;
     height: 250px
 }
 
+.dailyWeather h3 {
+    font-size: 35px;
+}
+
+.dailyWeather p {
+    font-size: 20px;
+}
+
 .highsAndLows {
-    border-top: 2px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 2px solid lightgrey;
     width: 100%;
+    font-size: 20px;
+    height: 130px;
 }
