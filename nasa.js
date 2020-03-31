@@ -1,5 +1,4 @@
 // GET https://api.nasa.gov/planetary/apod
-// oXj5PnRzPch835WTgoThSVfQdftEDm8WsqJsM4e4
 
 import key from "./variables.js";
 
