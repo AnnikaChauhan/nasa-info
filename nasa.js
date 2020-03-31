@@ -1,7 +1,7 @@
 // GET https://api.nasa.gov/planetary/apod
 // oXj5PnRzPch835WTgoThSVfQdftEDm8WsqJsM4e4
 
-const key = "oXj5PnRzPch835WTgoThSVfQdftEDm8WsqJsM4e4";
+import key from "./variables.js";
 
 async function getNasaImage() {
     const params = {
@@ -20,16 +20,16 @@ async function getNasaImage() {
 
 getNasaImage();
 
-roundToTwoDecimalPlaces = (number) => {
+const roundToTwoDecimalPlaces = (number) => {
     return Number.parseFloat(number).toFixed(2);
 }
 
-farenheitToCelsius = (farenheight) => {
+const farenheitToCelsius = (farenheight) => {
     let celcius = (farenheight - 32) * (5/9);
     return celcius;
 }
 
-getTheDate = (date) => {
+const getTheDate = (date) => {
     const dateAsDate = Date(date);
     return dateAsDate;
 }
