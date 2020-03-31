@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    height: 200px;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.todayOnMars {
+    width: 100vw;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.todayOnMars h3 {
+    font-size: 50px;
+}
+.todayOnMars h4 {
+    font-size: 30px;
+}
+
+.dailyWeather {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 160px;
+    height: 250px
+}
+
+.highsAndLows {
+    border-top: 2px solid grey;
+    width: 100%;
+}
