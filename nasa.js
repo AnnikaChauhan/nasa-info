@@ -1,6 +1,6 @@
 // GET https://api.nasa.gov/planetary/apod
 
-import APIkey from "./variables.js";
+//import APIkey from "./variables.js";
 const key = "lOlH3lnFB8w96r2UdDzVubhemZJxFjDjFQlrr1Ou";
 
 async function getNasaImage() {
