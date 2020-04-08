@@ -1,0 +1,11 @@
+{
+  "name": "nasa-info",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AnnikaChauhan/nasa-info.git",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "typescript": "^3.8.3"
+  }
+}
