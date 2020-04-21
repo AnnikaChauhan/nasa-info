@@ -24,14 +24,17 @@ h2 {
     font-size: 45px;
 }
 
-img {
-    width: 100vw;
-}
-
 section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+#nasapic img {
+    height: 90vh;
+    width: auto;
+    border: 2px solid lightgray;
+    border-radius: 5px;
 }
 
 .todayOnMars {
